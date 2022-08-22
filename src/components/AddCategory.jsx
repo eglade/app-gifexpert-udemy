@@ -31,7 +31,7 @@ export const AddCategory = ({onAddCategory}) => {
     }    
 
     /**
-     * Retorno componente formulario busqueda
+     * Retorno componente formulario búsqueda
      */
     return (
         <form onSubmit={(e) => onInputSubmit(e) }>
