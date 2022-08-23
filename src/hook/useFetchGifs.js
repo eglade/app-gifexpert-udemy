@@ -13,7 +13,7 @@ export const useFetchGifs = (category) => {
         setIsLoading(false);
     }
 
-    // mediante useEffect() obtenemos la categoría ingresada y npo renderizamos todo nuevamente.
+    // mediante useEffect() obtenemos la categoría ingresada y no renderizamos todo nuevamente.
     useEffect( () => {
         getImages();
     }, [ ])

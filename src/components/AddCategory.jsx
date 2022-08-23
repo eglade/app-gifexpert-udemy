@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 
 export const AddCategory = ({onAddCategory}) => {
     
@@ -20,21 +21,22 @@ export const AddCategory = ({onAddCategory}) => {
     const onInputSubmit = (e) => {
         // no refresh al enviar
         e.preventDefault();
-        
+
+        // validar vacio
+        if (inputValue.trim().length <= 0) return;
+
         // utiliza funcion del padre para eliminas
-        const respOnAdd = onAddCategory(inputValue);
+        onAddCategory(inputValue);
         
         // seteo input a vacio y todo salio bien
-        if (respOnAdd === true) {
-            setInputValue('');            
-        }
+        setInputValue('');            
     }    
 
     /**
      * Retorno componente formulario búsqueda
      */
     return (
-        <form onSubmit={(e) => onInputSubmit(e) }>
+        <form aria-label="form" onSubmit={(e) => onInputSubmit(e) }>
             <input 
                 type="text" 
                 placeholder="Búsqueda de gif" 
@@ -45,3 +47,10 @@ export const AddCategory = ({onAddCategory}) => {
         </form>
     )
 };
+
+/**
+ * VALIDACIONES
+ */
+ AddCategory.propTypes = {
+    onAddCategory: PropTypes.func.isRequired
+}  

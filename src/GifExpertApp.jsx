@@ -13,8 +13,6 @@ export const GifExpertApp = () => {
      * @returns 
      */
     const addCategory = (newValue) => {
-        // validar vacio
-        if (newValue.trim().length <= 0) return false;
         
         // validar repetido (por valor exacto)
         if (categories.includes(newValue)) return false;
@@ -38,7 +36,6 @@ export const GifExpertApp = () => {
         return true;
     }
 
-
     return (
         <>
             {/* titulo */}
@@ -47,7 +44,7 @@ export const GifExpertApp = () => {
             {/* input - form */}
             <AddCategory 
                 onAddCategory={(newValue) => addCategory(newValue)}
-            />
+            />          
             <hr />
 
             {/* listado de gif's */}

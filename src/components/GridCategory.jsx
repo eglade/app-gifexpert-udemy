@@ -1,5 +1,6 @@
 import { useFetchGifs } from "../hook/useFetchGifs";
 import { GiftCardItem } from "../components";
+import PropTypes from "prop-types";
 
 /**
  * Muestra el Grid de una determinada categoria.
@@ -37,13 +38,13 @@ export const GridCategory = ({category, index, onDeleteCategory }) => {
 
             { isLoading && (<h2>Cargando...</h2>)}
 
-            {/* <p>{generalDescriptions[Math.floor(Math.random() * 4)]}</p> */}
             <div className="card-grid">
                 {
                     images.map( (gif) => (
                         <GiftCardItem 
                             key={gif.id} 
-                            {...gif}
+                            title={gif.title}
+                            url={gif.url}
                         />                    
                     ))                
                 }
@@ -51,3 +52,14 @@ export const GridCategory = ({category, index, onDeleteCategory }) => {
         </>
     )
 }; 
+
+
+/**
+ * VALIDACIONES
+ */
+ GridCategory.propTypes = {
+    category: PropTypes.string.isRequired
+}  
+
+
+
