@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<GiftCardItem.test /> El componente debe hacer match con el snapshot 1`] = `
+<div>
+  <div
+    aria-label="dfgh"
+    class="card"
+  >
+    <p>
+      Goku
+    </p>
+    <img
+      alt="Goku"
+      src="https://media2.giphy.com/media/WOb8EeFziTQNE02WXs/giphy.gif?cid=b6da54b3lwd0fa7q7eoiq5u6w0yyozvrps3c64nbyyu9dosb&rid=giphy.gif&ct=g"
+    />
+  </div>
+</div>
+`;
